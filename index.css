@@ -1,6 +1,8 @@
+
 * {
   box-sizing: border-box;
   background: #fff6ef;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .navigation {
@@ -17,8 +19,11 @@
    display: block;
   color: #333333;
   padding: 20px;
+  text-decoration: none;
 }
 
-.navigation-link:hover {
-  
+.navigation-link: hover {
+  background: #333333;
+  color: #fff6ef:
+
 }
