@@ -1,14 +1,17 @@
 * {
-  /*box-sizing: border-box;*/
+  box-sizing: border-box;
   background: #fff6ef;
   font-family: 'Open Sans', sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 
 .navigation {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr 5px; /*for the bottom border-- figure out how to make the row span the entire width*/
+  grid-template-rows: auto 2px; /*for the bottom border-- figure out how to make the row span the entire width*/
   list-style: none;
+  width: 100vw;
   /*border-bottom: 3px solid #333333;*/
 }
 
@@ -19,21 +22,24 @@
 #navigation-blank {
   grid-column: 2/span 2;
 }
+
 .border-bottom {
+  grid-template-rows: 3px;
   grid-column: 1/6;
   background-color: #333333;
+  width: 100vw;
 }
+
 .navigation-link {
-   /*display: block;*/
+  display: block;
   color: #333333;
-  /*padding: 0px 0px 10px 0px;*/
   /*border-right: 2px solid #333333; a regluar css border -- not ideal to use with a grid*/
   text-decoration: none;
 }
 
-.border-right {
+/*.border-right {
   background: #333333;
-}
+} */
 
 .navigation-link:hover {
   background: #333333;
