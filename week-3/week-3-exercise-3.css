@@ -1,0 +1,58 @@
+.planets {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+}
+
+.planet {
+    list-style: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.planet-mercury:hover {
+    background: red;
+}
+
+.planet-venus:hover {
+  transform: rotateX(180deg);
+  background: orange;
+}
+
+.planet-earth:hover {
+  background: yellow;
+  opacity: 0.2;
+}
+
+.planet-mars:hover {
+  background: green;
+  transform: scale(2);
+}
+
+.planet-jupiter:hover {
+  background: blue;
+  transform: scale(0.3) rotateX(45deg) translate(12px, 50%);
+}
+
+.planet-saturn:hover {
+  background: indigo;
+  font-size: 60px;
+}
+
+.planet-uranus:hover {
+  background: violet;
+  border-radius: 0;
+}
+
+.planet-neptune:hover {
+  background: darkviolet;
+  opacity: 80%;
+}
