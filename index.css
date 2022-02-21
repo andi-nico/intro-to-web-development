@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  background: #fff6ef;
+}
+
+.navigation {
+  display: flex;
+  padding: 5px;
+  list-style: none;
+}
+
+.navigation-item {
+  flex: 1;
+}
+
+.navigation-link{
+   display: block;
+  color: #333333;
+  padding: 20px;
+}
+
+.navigation-link:hover {
+  
+}
