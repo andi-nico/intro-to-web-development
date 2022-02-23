@@ -2,18 +2,18 @@
   box-sizing: border-box;
   background: #fff6ef;
   font-family: 'Open Sans', sans-serif;
-  margin: 0px;
   padding: 0px;
 }
 
-.navigation {
+/*.navigation {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto 2px; /*for the bottom border-- figure out how to make the row span the entire width*/
-  list-style: none;
+  grid-template-rows: auto 2px;*/ /*for the bottom border-- figure out how to make the row span the entire width*/
+ /* list-style: none;
   width: 100vw;
-  /*border-bottom: 3px solid #333333;*/
-}
+  margin: 0px 0px 5px 0px;*/
+  /*border-bottom: 3px solid #333333;
+}*/
 
 /*.navigation-item {
   flex: 1;
@@ -44,4 +44,10 @@
 .navigation-link:hover {
   background: #333333;
   color: #fff6ef;
+}
+
+/*Hero Styles*/
+
+.hero-text {
+  margin: 30px;
 }
