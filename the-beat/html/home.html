@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home - The Beat</title>
+
+<!--     CSS LINKS -->
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/piano.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" 
+     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+     crossorigin=""/>
+
+<!--     FONT LINKS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2family=Cabin:wght@400;500;600&family=Mulish:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<!--     JAVASCRIPT LINKS -->
+    <script defer src="../js/all.js" charset="utf-8"></script>
+    <script defer src="../js/home.js" charset="utf-8"></script>
+    <script defer src="../js/piano.js" charset="utf-8"></script>
+
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+     integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+     crossorigin=""></script>
+  </head>
+
+    <!-- RESPONSIVE NAVIGATION WITH SLIDE OUT HAMBURGER MENU -->
+      <header>
+        <div class="container">
+          <nav>
+            <img class="logo" src="../assets/logo.png" alt="The Beat">
+
+            <ul class="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="artists.html">Artists</a></li>
+              <li><a href="#piano">Piano</a></li>
+            </ul>
+
+            <button class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </nav>
+        </div>
+
+        <nav class="mobile-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="#piano">Piano</a></li>
+          </ul>
+        </nav>
+   </header>
+ 
+  <body>
+    
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+      <div>
+        <img class="hero-image" src="../assets/hero-image.jpg" alt="It's our hearts that make the beat.">
+      </div>
+    </section>
+
+<!-- HOME EVENTS -->
+    <section id="events" class="home-section">
+      <div>
+        <h2>Events</h2>
+      </div>
+
+      <container class="events-flex">
+      <!-- venue 1 homepage events container -->
+      <container class="left-side-events">
+
+        <!-- events details (left side) -->
+        <div class="event-details">
+          <h3>Blues Kitchen - Brixton</h3>
+          <p class="venue-details">03/04/2022 <br> Doors Open: 7 PM</p>
+        </div>
+
+        <div class="event-container">
+          <!-- events article Black Keys-->
+          <div>
+            <span>
+              <a href="../html/black-keys-profile.html">
+                <img class="image-preview" src="../assets/events-preview/Blackkeys-1.jpeg" alt="Black Keys Frontmen"><br>
+              The Black Keys
+            </a>
+            </span>
+          </div>
+
+          <!-- events article the kooks -->
+          <div>
+            <span>
+              <a href="../html/kooks-profile.html">
+                <img class="image-preview" src="../assets/events-preview/the-kooks.jpg" alt="The Kooks"><br>
+                The Kooks
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Venue 2 Homepage Events -->
+        <article class="event-details">
+          <h3>KOKO - Camden</h3>
+          <p class="venue-details">12/05/2022 <br> Doors Open: 7 PM</p>
+        </article>
+
+        <div class="event-container">
+          <!-- events article Lianne Lahavas-->
+          <article>
+            <span>
+              <a href="../html/llh-profile.html">
+                <img class="image-preview" src="../assets/events-preview/lianne-lahavas.jpeg" alt="Lianne LaHavas"><br>
+              Lianne LaHavas
+              </a>
+            </span>
+          </article>
+
+          <!-- events article Paspatou -->
+          <article>
+            <span>
+              <a href="../html/paspatou-profile.html">
+                <img class="image-preview" src="../assets/events-preview/paspatou.jpeg" alt="Parra for Cuva"><br>
+                Parra for Cuva
+              </a>
+            </span>
+          </article>
+        </div>
+      </container>
+
+        <!-- Events Map Homepage for now (right side)-->
+        <container class="right-side-events">
+            <div id="map"></div>
+
+            <!-- <img class="map" src="../assets/events-preview/map.png" alt="Map"> -->
+        </container>
+
+      </container>
+        <!-- end discover events container -->
+    </section>
+
+        <!-- END DISCOVER EVENTS SECTION-->
+
+<!-- PIANO SECTION -->
+
+    <section id="piano">
+     
+      <!-- PIANO -->
+    <h2>Play a Song</h2>
+
+    <div class="text-container">
+      <p>Press the piano keys with your mouse to play a song. <br>Do you remember how to play 'Happy Birthday'?</p>
+    </div>
+<!-- includes data notes so that it's clear what each div links to. For example,
+"data-note"="C" means that the div (or key) links to the "C" audio file -->
+<div class="piano">
+    <div data-note="C" class="key white"></div>
+    <div data-note="Db" class="key black"></div>
+    <div data-note="D" class="key white"></div>
+    <div data-note="Eb" class="key black"></div>
+    <div data-note="E" class="key white"></div>
+    <div data-note="F" class="key white"></div>
+    <div data-note="Gb" class="key black"></div>
+    <div data-note="G" class="key white"></div>
+    <div data-note="Ab" class="key black"></div>
+    <div data-note="A" class="key white"></div>
+    <div data-note="Bb" class="key black"></div>
+    <div data-note="B" class="key white"></div>
+  </div>
+
+<!-- Audio tags are required for us to be able to access the audio files  -->
+  <audio id="C" src="../assets/notes/C.mp3"></audio>
+  <audio id="Db" src="../assets/notes/Db.mp3"></audio>
+  <audio id="D" src="../assets/notes/D.mp3"></audio>
+  <audio id="Eb" src="../assets/notes/Eb.mp3"></audio>
+  <audio id="E" src="../assets/notes/E.mp3"></audio>
+  <audio id="F" src="../assets/notes/F.mp3"></audio>
+  <audio id="Gb" src="../assets/notes/Gb.mp3"></audio>
+  <audio id="G" src="../assets/notes/G.mp3"></audio>
+  <audio id="Ab" src="../assets/notes/Ab.mp3"></audio>
+  <audio id="A" src="../assets/notes/A.mp3"></audio>
+  <audio id="Bb" src="../assets/notes/Bb.mp3"></audio>
+  <audio id="B" src="../assets/notes/B.mp3"></audio>
+
+
+      
+    </section>
+<!-- NEWSLETTER -->
+   <section id="newsletter" class="home-section">
+      <div>
+        <h2>Stay in the Loop</h2>
+      </div>
+      <div class="home-newsletter">
+      <h3>Get The Beat sent directly to your inbox!</h3>
+
+      <form id="form" action="#" novalidate>
+        <ul>
+          <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="first-name">
+          </li>
+          <li>
+            <label for="mail">Email:</label>
+            <input type="email" id="email" name="email-address">
+          </li>
+
+          <li class="select">
+            <p>How often would you like to receive The Beat?</p>
+            <select id="frequency" name="frequency">
+                <option value = "0">Select Frequency</option>
+                <option value = "1">Daily</option>
+                <option value = "2">Weekly</option>
+                <option value = "3">Monthly</option>
+            </select>
+          </li>
+
+          <li class="button">
+            <button type="submit">Sign Up!</button>
+          </li>
+
+         </ul>
+
+                 <div id="error"></div>
+
+      </form>
+    </div>
+
+
+    </section>
+
+  </body>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img class="footer-logo" src="../assets/logo.png" alt="">
+
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="artists.html">Artists</a></li>
+    <li><a href="piano.html">Piano</a></li>
+  </ul>
+
+  <p class="footer-text">This project was created for a Web Applications Development module. A full list of image and element sources is availabe in the full report.</p>
+</footer>
+
+</html>
