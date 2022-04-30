@@ -1,6 +1,6 @@
 //JS file for The Beat Homepage. Includes JS for embedded Leaflet JS Map with markers and popups. Also includes the form validation for newsletter sign up form
 
-//EMVEDDED MAP
+//EMBEDDED MAP
 var venuesMap = L.map('map').setView([51.505, -0.09], 13); // Setting map coordinates
 
 

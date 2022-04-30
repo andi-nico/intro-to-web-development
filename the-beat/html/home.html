@@ -5,13 +5,13 @@
     <title>Home - The Beat</title>
 
 <!--     CSS LINKS -->
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/piano.css">
+    <link rel="stylesheet" href="../css/all.css"> <!--All pages stylesheet-->
+    <link rel="stylesheet" href="../css/home.css"> <!--Homepage stylesheet-->
+    <link rel="stylesheet" href="../css/piano.css"> <!--Piano section stylesheet-->
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-     crossorigin=""/>
+     crossorigin=""/> <!--Leaflet Map stylesheet-->
 
 <!--     FONT LINKS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,13 @@
     <link href="https://fonts.googleapis.com/css2family=Cabin:wght@400;500;600&family=Mulish:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
 <!--     JAVASCRIPT LINKS -->
-    <script defer src="../js/all.js" charset="utf-8"></script>
-    <script defer src="../js/home.js" charset="utf-8"></script>
-    <script defer src="../js/piano.js" charset="utf-8"></script>
+    <script defer src="../js/all.js" charset="utf-8"></script> <!--All pages JS-->
+    <script defer src="../js/home.js" charset="utf-8"></script> <!--Homepage JS-->
+    <script defer src="../js/piano.js" charset="utf-8"></script> <!--Piano JS -->
 
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-     crossorigin=""></script>
+     crossorigin=""></script> <!--Leaflet Map JS-->
   </head>
 
     <!-- RESPONSIVE NAVIGATION WITH SLIDE OUT HAMBURGER MENU -->
@@ -41,15 +41,18 @@
               <li><a href="#events">Events</a></li>
               <li><a href="artists.html">Artists</a></li>
               <li><a href="#piano">Piano</a></li>
-            </ul>
+            </ul>            
 
             <button class="hamburger">
               <span></span>
               <span></span>
               <span></span>
             </button>
+          <div class="bottom-border"></div>
+
           </nav>
         </div>
+        
 
         <nav class="mobile-nav">
           <ul>
@@ -85,56 +88,64 @@
         <!-- events details (left side) -->
         <div class="event-details">
           <h3>Blues Kitchen - Brixton</h3>
-          <p class="venue-details">03/04/2022 <br> Doors Open: 7 PM</p>
+          <p class="details-text">03/04/2022</p>
+          <p class="details-text">Doors Open: 7 PM</p>
         </div>
 
         <div class="event-container">
           <!-- events article Black Keys-->
-          <div>
-            <span>
-              <a href="../html/black-keys-profile.html">
-                <img class="image-preview" src="../assets/events-preview/Blackkeys-1.jpeg" alt="Black Keys Frontmen"><br>
-              The Black Keys
-            </a>
-            </span>
-          </div>
+          <article>
+            <div>
+              <div>
+                  <a href="../html/black-keys-profile.html">
+                    <img class="image-preview" src="../assets/events-preview/Blackkeys-1.jpeg" alt="Black Keys Frontmen"><br>
+                  The Black Keys
+                </a>
+              </div>
+            </div>
+          </article>
+          
 
           <!-- events article the kooks -->
-          <div>
-            <span>
-              <a href="../html/kooks-profile.html">
-                <img class="image-preview" src="../assets/events-preview/the-kooks.jpg" alt="The Kooks"><br>
-                The Kooks
-              </a>
-            </span>
-          </div>
-        </div>
+          <article>
+            <div>
+                <div>
+                  <a href="../html/kooks-profile.html">
+                    <img class="image-preview" src="../assets/events-preview/the-kooks.jpg" alt="The Kooks"><br>
+                    The Kooks
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
 
         <!-- Venue 2 Homepage Events -->
         <article class="event-details">
           <h3>KOKO - Camden</h3>
-          <p class="venue-details">12/05/2022 <br> Doors Open: 7 PM</p>
+          <p class="details-text">12/05/2022</p> 
+          <p class="details-text">Doors Open: 7 PM</p>
         </article>
 
         <div class="event-container">
           <!-- events article Lianne Lahavas-->
           <article>
-            <span>
+            <div>
               <a href="../html/llh-profile.html">
                 <img class="image-preview" src="../assets/events-preview/lianne-lahavas.jpeg" alt="Lianne LaHavas"><br>
-              Lianne LaHavas
+<!--               Lianne LaHavas -->
               </a>
-            </span>
+              <a href="../html/llh-profile.html">Lianne LaHavas</a>
+            </div>
           </article>
 
           <!-- events article Paspatou -->
           <article>
-            <span>
+            <div>
               <a href="../html/paspatou-profile.html">
                 <img class="image-preview" src="../assets/events-preview/paspatou.jpeg" alt="Parra for Cuva"><br>
                 Parra for Cuva
               </a>
-            </span>
+            </div>
           </article>
         </div>
       </container>
@@ -142,8 +153,6 @@
         <!-- Events Map Homepage for now (right side)-->
         <container class="right-side-events">
             <div id="map"></div>
-
-            <!-- <img class="map" src="../assets/events-preview/map.png" alt="Map"> -->
         </container>
 
       </container>
@@ -193,9 +202,8 @@
   <audio id="Bb" src="../assets/notes/Bb.mp3"></audio>
   <audio id="B" src="../assets/notes/B.mp3"></audio>
 
-
-      
     </section>
+    
 <!-- NEWSLETTER -->
    <section id="newsletter" class="home-section">
       <div>

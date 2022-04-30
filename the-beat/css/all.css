@@ -1,7 +1,11 @@
+/* This CSS file is relevant for all pages of the website */
+
+/* SMOOTH SCROLLING */
 html {
     scroll-behavior: smooth;
 }
 
+/* BODY STYLES -- uses CSS variables to simplify CSS styles and prevent uneccesary repitition*/
 body {
   --dark: #0B0B0C;
   --light: #F5F4F4;
@@ -47,6 +51,7 @@ h2 {
   font-weight: 400;
 
   color: var(--light);
+  
   margin-bottom: 2rem;
 }
 
@@ -56,7 +61,16 @@ p {
   font-weight: 300;
 
   color: var(--light);
+}
 
+a {
+  font-family: var(--font1);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--light);
+  line-height: 2;
+
+  text-decoration: none;
 }
 
 /* NAVIGATION STYLES */
@@ -74,9 +88,19 @@ nav {
 
   background-color: var(--dark);
   padding: 16px 32px;
-  border-bottom: 3px solid var(--gradient-color);
 
   max-height: 70px;
+}
+
+.bottom-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--background-image);
+  background-size: cover;
+  width: 100%;
+  z-index: 1;
 }
 
 .logo {
@@ -121,15 +145,18 @@ nav {
   background-image: var(--gradient);
 }
 
-.hamburger.is-active span:nth-child(1) {
+/* Selects the top bar in the hamburger menu and rotates it 45 deg down */
+.hamburger.is-active span:nth-child(1) { 
   transform: translate(0px, -2px) rotate(45deg);
 }
 
+/* Selects the middle bar in the hamburger menu and moves it 10 px to the right */
 .hamburger.is-active span:nth-child(2) {
   opacity: 0;
   transform: translateX(15px);
 }
 
+/* Selects the bottom bar in the hamburger menu and rotates it 45 deg up */
 .hamburger.is-active span:nth-child(3) {
   transform: translate(-3px, 3px) rotate(-45deg);
 }
@@ -222,7 +249,7 @@ height: 40rem;
 padding-top: 70px;
 
 filter: brightness(75%);
-object-fit: cover;
+background-size: cover;
 }
 
 
@@ -275,14 +302,4 @@ object-fit: cover;
   font-size: 12px;
   font-weight: 200;
   color: var(--light);
-}
-
-
-
-/* MEDIA QUERIES */
-
-@media (max-width: 1085px) {
-  h2 {
-    .font-size: 25px;
-  }
 }
