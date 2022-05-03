@@ -9,6 +9,7 @@ list.addEventListener('click', listView); //clicking on "list" button triggers l
 function listView() {
   document.getElementById('column-1').style.width = "100%"; //event listener changes width to 100%, making cards appear in "list view"
   document.getElementById('column-2').style.width = "100%"; //event listener changes width to 100%, making cards appear in "list view"
+	list.classList.add("active")
 }
 
 grid.addEventListener('click', gridView); //clicking on "grid" button trigger grid view using the below function
@@ -16,14 +17,25 @@ grid.addEventListener('click', gridView); //clicking on "grid" button trigger gr
 function gridView() {
   document.getElementById('column-1').style.width = "50%"; //event listener changes width to 50%, making cards appear in "list view"
   document.getElementById('column-2').style.width = "50%"; //event listener changes width to 50%, making cards appear in "list view"
+	grid.classList.add("active")
+
 }
 
-function active() { //function toggles "list" button to active state
-  var listActive = document.getElementById("list");
-  listActive.classList.toggle("active");
-}
+//ACTIVE/INACTIVE BUTTON STATE TOGGLE
+//var listActive = document.getElementById("list");
+//var gridActive = document.getElementById("grid");
 
-function active() { //function toggles "grid" button to active state
-  var gridActive = document.getElementById("grid");
-  gridActive.classList.toggle("active");
-}
+//function activeList() { //function toggles "list" button to active state
+// 	listActive.classList.add("active");
+// }
+
+//function activeGrid() { //function toggles "grid" button to active state
+//   gridActive.classList.add("active");
+// 	return true;
+// }
+
+// function removeList() {
+// 	if (activeGrid) {
+// 		listActive.classList.remove("active");
+// 	}
+// }

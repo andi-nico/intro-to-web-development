@@ -4,7 +4,6 @@ body {
   --white-key-width: 100px;
   --black-key-width: 60px;
   background-color: #000000;
-
 }
 
 .header-text {
@@ -41,7 +40,6 @@ body {
   border-radius: 5px;
 }
 
-/* white key styles */
 .white {
   width: var(--white-key-width);
   height: calc(var(--white-key-width) * 4);
@@ -53,7 +51,6 @@ body {
   background-color: #CCC;
 }
 
-/* black key styles */
 .black {
   width: var(--black-key-width);
   height: calc(var(--black-key-width) * 4);
@@ -81,10 +78,8 @@ body {
 
   .text-container p {
     font-size: 16px;
-/*     text-align: center; */
   }
   
-  /* PIANO STYLES */
   .piano {
     margin: 20px;
   }
@@ -104,10 +99,8 @@ body {
 
   .text-container p {
     font-size: 16px;
-/*     text-align: center; */
   }
   
-  /* PIANO STYLES */
   .piano {
     margin: 20px;
   }

@@ -7,7 +7,7 @@ html {
 
 /* BODY STYLES -- uses CSS variables to simplify CSS styles and prevent uneccesary repitition*/
 body {
-  --dark: #0B0B0C;
+  --dark: #000000;
   --light: #F5F4F4;
   --grey: #0E0E10;
   --mid: #242526;
@@ -195,6 +195,7 @@ nav {
   text-decoration: underline;
 }
 
+/* RESPONSIVE NAVIGATION - Hides hamburger menu at larger breakpoints */
 @media (min-width: 768px) {
   .hamburger {
     display: none;

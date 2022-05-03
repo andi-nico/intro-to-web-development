@@ -1,6 +1,6 @@
-//JS file for The Beat Homepage. Includes JS for embedded Leaflet JS Map with markers and popups. Also includes the form validation for newsletter sign up form
+//**EMBEDDED MAP * EMBEDDED MAP**
+//**EMBEDDED MAP * EMBEDDED MAP**
 
-//EMBEDDED MAP
 var venuesMap = L.map('map').setView([51.505, -0.09], 13); // Setting map coordinates
 
 
@@ -31,35 +31,119 @@ kokoMarker.bindPopup("<b>KOKO</b><br>1A Camden high St<br>London, NW1 7JE"); //B
 var villageUndergroundMarker = L.marker([51.523731, -0.079230]).addTo(venuesMap); //Village Underground marker
 villageUndergroundMarker.bindPopup("<b>Village Underground</b><br>54 Holywell Ln<br>London, EC2A 3PQ"); //Binds Village Underground popup to marker
 
-
 var electricBallroomMarker = L.marker([51.539747, -0.143013]).addTo(venuesMap); //Electric Ballroom marker
 electricBallroomMarker.bindPopup("<b>Electric Ballroom</b><br>184 Camden high St<br>London, NW1 8QP"); //Binds Electric Ballroom popup to marker
-
 
 var omearaMarker = L.marker([51.50414, -0.094533]).addTo(venuesMap); //Omeara marker
 omearaMarker.bindPopup("<b>Omeara</b><br>6 O'Meara St<br>London, SE1 1TE");//Binds Omeara popup to marker
 
-// NEWSLETTER FORM VALIDATION
-const form = document.getElementById('form');
+//**PIANO * PIANO **
+//**PIANO * PIANO **
+
+const keys = document.querySelectorAll('.key') //Select all elements with the class "key". Using "const" instead of var because the variable should not change in the future
+const whiteKeys = document.querySelectorAll('.key.white') //Select all the white keys using a combo class
+const blackKeys = document.querySelectorAll('.key.black') //Select all black keys using a combo class
+
+keys.forEach(key => {
+  key.addEventListener('click', () => playNote(key))
+})
+
+//keys will play the associated note when pressed with the mouse 
+function playNote(key) {
+  const noteAudio = document.getElementById(key.dataset.note) //use "dataset" to call the html data attribute
+  noteAudio.currentTime = 0 //restarts the audio file at the beginning each time the key is pressed
+  noteAudio.play() //plays audio
+  key.classList.add('active') //indicates that the key is being pressed
+  noteAudio.addEventListener('ended', () => { //removes the active state when the key is not being pressed anymore
+    key.classList.remove('active')
+  })
+}
+
+// **MUSIC NEWS * MUSIC NEWS** 
+// **MUSIC NEWS * MUSIC NEWS** 
+
+var apiKey = '14794e3966714affa3ffa1b331c84f4c';
+
+function requestNews() {
+    // set a default query to search for
+    var query = "Music";
+
+    var proxyUrl = 'https://www.staff.city.ac.uk/~sbrm225/proxy.php?csurl=';
+    var originalUrl = 'https://newsapi.org/v2/everything&q=' + query + '&apiKey=' + apiKey
+    var apiUrl = proxyUrl + originalUrl;
+
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Data :', data);
+
+            // once we have the new stories, update the page
+            updateNews(data); 
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+
+function updateNews(data) { // update the news
+    var newsElement = document.querySelector(".news");     // remove current stories
+
+    while (newsElement.firstChild) {
+        newsElement.removeChild(newsElement.firstChild);
+    }
+
+    
+    data.articles.slice(0, 6).forEach(createNewsStory); // add first six news articles
+}
+
+function createNewsStory(story) {
+
+  var storyElement = document.createElement("a"); // create a link for each element
+  storyElement.href = story.url;
+  storyElement.classList.add("story-link");
+
+
+    
+    var storyTitle = document.createElement("p"); // add the article title
+    storyTitle.classList.add("story-name");
+    storyTitle.textContent = story.title;
+    storyElement.appendChild(storyTitle);
+
+    
+    var storySource = document.createElement("em"); // add other story details
+    storySource.classList.add("story-source");
+    storySource.textContent = "Source: " + story.source.name;
+    storyElement.appendChild(storySource);
+
+   
+    var storyImg = document.createElement("img");  // add image
+    storyImg.classList.add("story-img");
+    storyImg.src = story.urlToImage;
+    storyElement.appendChild(storyImg);
+
+   
+    var newsElement = document.querySelector(".news");  // add the story to the page
+    newsElement.appendChild(storyElement);
+}
+
+requestNews(); //update on page load
+
+
+// **NEWSLETTER VALIDATION ** NEWSLETTER VALIDATION**
+// **NEWSLETTER VALIDATION ** NEWSLETTER VALIDATION**
+
+const submit = document.getElementById('submit');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const frequency = document.getElementById('frequency');
 const errorElement = document.getElementById('error');
-var contains = false;
+const confirmSubmission = document.getElementById('confirm');
 
-form.addEventListener('submit', (e) => { //this event listener specifies the conditions for form submission
+confirmSubmission.addEventListener('confirm', (e) => { //this event listener specifies the conditions for form submission
   let errorMessage = [] //selects all error messages
   if (name.value == '' || name.value == null) { //if the name field is an empty string or just left blank
     errorMessage.push('Please enter your name') //error message will displayed
   }
-
-  if (email.value.includes = '@') { //if the email address contains an @ sign, then it is valid, no error message will be pushed
-   contains = true;
- }
-
- if (contains) { //if the email address does not contain the @ sign, an error message will be pushed (refernece previously declared variable 'contains = false')
-   errorMessage.push("All email addresses must contain the '@' sign")
- }
 
   if (frequency.value == "0") { //chooses the "default option, meaning the user hasn't selected a value from the dropdown"
     errorMessage.push('Please choose a newsletter frequency')
@@ -69,4 +153,8 @@ form.addEventListener('submit', (e) => { //this event listener specifies the con
     e.preventDefault() //prevents form from submiting if an error is present
     errorElement.innerText = errorMessage.join("\n") //if there are multiple error messages, they will be simultaneously shown to the user on a new line
   }
+
+	else {
+		confirmSubmission.push('Thanks for signing up!')
+	}
 })

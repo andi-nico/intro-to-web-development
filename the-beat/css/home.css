@@ -1,4 +1,9 @@
 /* These CSS Styles are specific the the homepage */
+body {
+  --white-key-width: 100px;
+  --black-key-width: 60px;
+  background-color: #000000;
+}
 
 /* TEXT STYLES */
 h2 {
@@ -35,7 +40,102 @@ h3 {
     margin: 10px 0; 
   }
 
-/* EVENTS STYLES */
+.header-text {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+
+  margin: 30px auto;
+}
+
+.text-container p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+/* HERO/BACKGROUND VIDEO */
+.hero {
+	position: relative;
+}
+
+.background-video {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	filter: brightness(50%);
+	background-size: cover;
+
+	z-index: 0;
+}
+
+.page-title {
+	position: absolute;
+	top: 50%;
+	margin: 0 auto;
+	width: 100%;
+	
+	text-align: center;
+
+	font-size: 72px;
+}
+
+.scroll-link {
+	position: absolute;
+	top: 70%;
+	left: 40%;
+	margin: 50px auto;
+	width: 20%;
+
+	z-index: 2;
+
+	font-size: 30px;
+	text-align: center;
+
+	background: var(--background-image);
+	background-size: cover;
+	
+	border-radius: 20px;
+}
+
+.scroll-link:hover, .form.button:hover {
+	background: var(--background-image);
+ 	background-size: cover;
+ 	filter: brightness(75%);
+ 	transition: .5s;
+
+	cursor: pointer;
+}
+
+/* WELCOME */
+.welcome {
+	padding-top: 300px;
+	margin-bottom: 200px;
+}
+
+.welcome h2 {
+	margin: 60px auto;
+	border: none;
+}
+
+.welcome p {
+	width: 50vw;
+	margin: 0 auto;
+
+	font-family: var(--font2);
+	font-weight: 400;
+	letter-spacing: .5px;
+	text-align: center;
+}
+
+/* EVENTS */
 .home-section {
   margin: 120px auto;
 }
@@ -99,7 +199,96 @@ h3 {
   transition: all 1s;
 }
 
-/* NEWSLETTER STYLES*/
+/* **PIANO** */
+/* **PIANO** */
+/* **PIANO** */
+
+.piano {
+  margin: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.key {
+  border-radius: 5px;
+}
+
+.white {
+  width: var(--white-key-width);
+  height: calc(var(--white-key-width) * 4);
+  background-color: #ffffff;
+  border: 1px solid #333;
+}
+
+.white.active {
+  background-color: #CCC;
+}
+
+.black {
+  width: var(--black-key-width);
+  height: calc(var(--black-key-width) * 4);
+  background-color: #000000;
+  margin-left: calc(var(--black-key-width) / -2);
+  margin-right: calc(var(--black-key-width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #333;
+}
+
+/* **MUSIC NEWS** */
+/* **MUSIC NEWS** */
+
+.news {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 70vw;
+    margin: 0 auto;
+}
+
+.story-link {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  height: auto;
+
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+
+  background: var(--mid);
+  text-decoration: none;
+
+}
+
+.story-name {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px;
+}
+
+.story-source {
+  font-family: var(--font2);
+  font-size: 10px;
+  color: var(--light);
+}
+
+.story-img {
+    width: 90%;
+    height: 90%;
+
+    background-size: cover;
+}
+
+/* **NEWSLETTER** */
+/* **NEWSLETTER** */
+
 .home-newsletter {
   display: flex;
   flex-direction: column;
@@ -116,7 +305,7 @@ h3 {
   text-transform: none;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,11 +316,11 @@ form {
   padding: 1em;
 }
 
-form p {
+.form p {
   margin: 10px auto;
 }
 
-form ul {
+.form ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,7 +330,7 @@ form ul {
   margin: 0;
 }
 
-form li {
+.form li {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -151,13 +340,13 @@ form li {
   color: var(--light);
 }
 
-form label {
+.form label {
   display: inline-block;
   text-align: right;
   margin-right: 40px;
 }
 
-form input {
+.form input {
   width: 250px;
   height: 25px;
   margin: 20px 30px;
@@ -190,7 +379,7 @@ option {
   text-align: center;
 }
 
-form button {
+.button {
   font-family: var(--font2);
   font-size: 18px;
   font-weight: 400;
@@ -203,16 +392,10 @@ form button {
   width: 400px;
   height: 40px;
   margin: 30px auto;
+  cursor: pointer;
 }
 
-form button:hover {
-  background: var(--background-image);
-  background-size: cover;
-  filter: brightness(75%);
-  transition: .5s;
-}
-
-#error {
+#error, #confirm {
   font-family: var(--font1);
   color: var(--light);
   font-size: 16px;
@@ -223,7 +406,9 @@ form button:hover {
   border: 1px solid var(--gradient);
 }
 
-/* SMALL DESKTOP/LAPTOP VIEW BREAKPOINT */
+/* **SMALL DESKTOP/LAPTOP VIEW BREAKPOINT** */
+/* **SMALL DESKTOP/LAPTOP VIEW BREAKPOINT** */
+
 @media (min-width: 768px) and (max-width: 1120px) {
     h2 {
     font-family: var(--font1);
@@ -327,7 +512,10 @@ form button:hover {
   }
 }
 
-/* TABLET AND MOBILE VIEW BREAKPOINT */
+
+/* **TABLET AND MOBILE VIEW BREAKPOINT** */
+/* **TABLET AND MOBILE VIEW BREAKPOINT** */
+
 @media (max-width: 768px) {
     h2 {
     font-family: var(--font1);
@@ -422,5 +610,14 @@ form button:hover {
     padding: 0 20px;
     transition: all 1s;
   }
+
+.news {
+    width: 90vw;
+}
+
+.story-link {
+  width: 100%;
+  height: auto;
+}
 
 }

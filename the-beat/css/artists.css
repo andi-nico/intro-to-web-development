@@ -83,7 +83,7 @@ object-fit: cover;
   transition: .4s;
 }
 
-.active {
+.active-list, .active-grid {
   background: var(--background-image);
   background-size: cover;
   filter: brightness(75%);
