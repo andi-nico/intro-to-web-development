@@ -132,18 +132,31 @@ requestNews(); //update on page load
 // **NEWSLETTER VALIDATION ** NEWSLETTER VALIDATION**
 // **NEWSLETTER VALIDATION ** NEWSLETTER VALIDATION**
 
-const submit = document.getElementById('submit');
+const form = document.getElementById('form');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const frequency = document.getElementById('frequency');
+const button = document.getElementById('button');
 const errorElement = document.getElementById('error');
-const confirmSubmission = document.getElementById('confirm');
+const confirmElement = document.getElementById('confirmed');
 
-confirmSubmission.addEventListener('confirm', (e) => { //this event listener specifies the conditions for form submission
+//if all input conditions are met, form will thank the user for signing up
+function confirmSubmit() { 
+    var confirmMessage = document.createElement("p");
+    confirmMessage.textContent = "Thanks for signing up!";
+    const confirmElement = document.getElementById('confirmed');
+    confirmElement.appendChild(confirmMessage);
+  }
+
+form.addEventListener('submit', (e) => { //this event listener specifies the conditions for form submission
   let errorMessage = [] //selects all error messages
   if (name.value == '' || name.value == null) { //if the name field is an empty string or just left blank
     errorMessage.push('Please enter your name') //error message will displayed
   }
+
+ if (!email.value.includes('@')) { //email value does not include '@' sign
+     errorMessage.push("All email addresses must contain the '@' sign")
+ }
 
   if (frequency.value == "0") { //chooses the "default option, meaning the user hasn't selected a value from the dropdown"
     errorMessage.push('Please choose a newsletter frequency')
@@ -154,7 +167,7 @@ confirmSubmission.addEventListener('confirm', (e) => { //this event listener spe
     errorElement.innerText = errorMessage.join("\n") //if there are multiple error messages, they will be simultaneously shown to the user on a new line
   }
 
-	else {
-		confirmSubmission.push('Thanks for signing up!')
-	}
-})
+  else {  //calls the confirmSubmit function to push the "thank you" message
+    e.preventDefault('submit', confirmSubmit())
+    }
+  })

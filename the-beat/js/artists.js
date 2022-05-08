@@ -20,22 +20,3 @@ function gridView() {
 	grid.classList.add("active")
 
 }
-
-//ACTIVE/INACTIVE BUTTON STATE TOGGLE
-//var listActive = document.getElementById("list");
-//var gridActive = document.getElementById("grid");
-
-//function activeList() { //function toggles "list" button to active state
-// 	listActive.classList.add("active");
-// }
-
-//function activeGrid() { //function toggles "grid" button to active state
-//   gridActive.classList.add("active");
-// 	return true;
-// }
-
-// function removeList() {
-// 	if (activeGrid) {
-// 		listActive.classList.remove("active");
-// 	}
-// }

@@ -1,0 +1,62 @@
+body {
+  --dark: #000000;
+  --light: #FFFFFF;
+  --grey: #0E0E10;
+  --mid: #242526;
+  --gradient: linear-gradient(90deg, #F8A94D 100%, #E056E2 100%);
+  --gradient-color: #E056E2;
+  --font1: 'Poppins', sans-serif;
+  --font2: 'Mulish', sans-serif;
+  --background-image: url("the-beat/assets/gradient.svg");
+  background-color: var(--dark);
+}
+
+h1 {
+	font-family: var(--font1);
+	font-size: 40px;
+	font-weight: 600;
+	margin: 10rem auto 2rem auto;
+	width: 60vw;
+	
+	text-align: center;
+	color: var(--light);
+}
+
+p {
+	font-family: var(--font2);
+	font-size: 20px;
+	font-weight: 400;
+	
+	text-align: center;
+	color: var(--light);
+}
+
+.button {
+	padding: 10px 0;
+	margin: 50px auto;
+
+	width: 250px;
+	text-align: center;	
+	
+	background: var(--background-image);
+	background-size: cover;
+
+	border-radius: 20px;
+
+	transition: .5s;
+}
+
+a {
+	font-family: var(--font2);
+	font-weight: 600;
+	font-size: 18px;
+	color: var(--light);
+	letter-spacing: 0.5px;
+	
+	text-decoration: none;
+}
+
+.button:hover {
+	filter: brightness(85%);
+	transform: scale(1.1);
+}

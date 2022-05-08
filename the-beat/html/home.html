@@ -232,7 +232,7 @@
       <div class="home-newsletter">
       <h3>Get The Beat sent directly to your inbox!</h3>
 
-      <div class="form">
+      <form id="form" novalidate>
         <ul>
           <li>
             <label for="name">Name:</label>
@@ -252,18 +252,21 @@
                 <option value = "3">Monthly</option>
             </select>
           </li>
-
-          <li id='submit' class="button">
-            <div type="submit">Sign Up!</div>
+        
+			<li>
+				<div id="error"></div>
+			</li>
+			
+          <li>
+            <button type="submit" class="button">Sign Up!</button>
           </li>
 
          </ul>
-				 <div id="confirm"></div>
-                 <div id="error"></div>
+				 <div id="confirmed"></div>
 		  
 
-      </div>
-    </div
+      </form>
+   </div>
     </section>
 
   </body>
@@ -280,7 +283,7 @@
      <li><a href="home.html#piano">Piano</a></li>
   </ul>
 
-  <p class="footer-text">This project was created for a Web Applications Development module. A full list of image and element sources is availabe in the full report.</p>
+  <p class="footer-text">This project was created for a Web Applications Development module. Content on artist profile pages was pulled from Spotify.</p>
 </footer>
 
 </html>

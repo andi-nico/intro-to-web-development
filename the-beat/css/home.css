@@ -105,7 +105,7 @@ h3 {
 	border-radius: 20px;
 }
 
-.scroll-link:hover, .form.button:hover {
+.scroll-link:hover, form.button:hover {
 	background: var(--background-image);
  	background-size: cover;
  	filter: brightness(75%);
@@ -264,7 +264,12 @@ h3 {
 
   background: var(--mid);
   text-decoration: none;
+  transition: 0.4s;
+}
 
+.story-link:hover {
+	transform: scale(1.1);
+	background: #383939;
 }
 
 .story-name {
@@ -305,7 +310,7 @@ h3 {
   text-transform: none;
 }
 
-.form {
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -316,11 +321,11 @@ h3 {
   padding: 1em;
 }
 
-.form p {
+form p {
   margin: 10px auto;
 }
 
-.form ul {
+form ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -330,7 +335,7 @@ h3 {
   margin: 0;
 }
 
-.form li {
+form li {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -340,13 +345,13 @@ h3 {
   color: var(--light);
 }
 
-.form label {
+form label {
   display: inline-block;
   text-align: right;
   margin-right: 40px;
 }
 
-.form input {
+form input {
   width: 250px;
   height: 25px;
   margin: 20px 30px;
@@ -400,6 +405,7 @@ option {
   color: var(--light);
   font-size: 16px;
   font-weight: 300;
+  text-align: center;
 
   width: 30vw;
   

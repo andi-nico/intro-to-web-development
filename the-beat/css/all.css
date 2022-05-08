@@ -161,7 +161,7 @@ nav {
   transform: translate(-3px, 3px) rotate(-45deg);
 }
 
-.hamburger.is-active:hover span{
+.hamburger.is-active:hover span {
   background-image: var(--gradient);
 }
 
